@@ -65,13 +65,6 @@ class RamenRunner {
     this.isMusicMuted = false;
     this.bgMusicPlayedOnce = false;
 
-    // For creating "Back to Home" button
-    this.homeButton = null;
-
-    // Compute max jump height
-    const jumpForceAbs = Math.abs(this.JUMP_FORCE);
-    this.maxJumpHeight = (jumpForceAbs * jumpForceAbs) / (2 * this.GRAVITY);
-
     // Load images/audio
     this.loadAssets();
 
@@ -94,35 +87,35 @@ class RamenRunner {
   loadAssets() {
     // Background
     this.backgroundImage = new Image();
-    this.backgroundImage.src = '/sprites/background.png';
+    this.backgroundImage.src = '/assets/sprites/background.png';
 
     // Character
     this.playerSprite = new Image();
     const selectedCharacter =
       localStorage.getItem('selectedCharacter') || 'runner.png';
     console.log('[loadAssets] selectedCharacter =', selectedCharacter);
-    this.playerSprite.src = `/sprites/${selectedCharacter}`;
+    this.playerSprite.src = `/assets/sprites/${selectedCharacter}`;
 
     // Obstacles
     this.obstacleSprites = ['obstacle1.png', 'obstacle2.png', 'obstacle3.png'].map(
       (src) => {
         const img = new Image();
-        img.src = `/sprites/${src}`;
+        img.src = `/assets/sprites/${src}`;
         return img;
       }
     );
 
     // Power-up
     this.powerUpSprite = new Image();
-    this.powerUpSprite.src = '/sprites/powerup.png';
+    this.powerUpSprite.src = '/assets/sprites/powerup.png';
 
     // Heart icon
     this.heartSprite = new Image();
-    this.heartSprite.src = '/sprites/heart.png';
+    this.heartSprite.src = '/assets/sprites/heart.png';
 
     // Audio
-    this.jumpSound = new Audio('/audio/jump.mp3');
-    this.bgMusic = new Audio('/audio/music.mp3');
+    this.jumpSound = new Audio('/assets/audio/jump.mp3');
+    this.bgMusic = new Audio('/assets/audio/music.mp3');
     this.bgMusic.loop = true;
   }
 

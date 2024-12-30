@@ -1,0 +1,14 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "*.html", "use": "@vercel/static" },
+      { "src": "styles/**/*.css", "use": "@vercel/static" },
+      { "src": "src/**/*.js", "use": "@vercel/static" },
+      { "src": "assets/sprites/**/*", "use": "@vercel/static" },
+      { "src": "assets/audio/**/*", "use": "@vercel/static" }
+    ],
+    "routes": [
+      { "src": "/(.*)", "dest": "/$1" }
+    ]
+  }
+  
