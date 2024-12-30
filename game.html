@@ -1,14 +1,24 @@
+<!-- game.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>RamenFinance Runner</title>
+  <title>HungryRunner Game</title>
+  <!-- Google Font "Outfit" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/styles/main.css" />
   <style>
     body {
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background: #EADED1;
+      background: #171717; /* Updated to match dark theme */
     }
     #phaser-game {
       width: 100vw;
@@ -19,8 +29,13 @@
 <body>
   <div id="phaser-game"></div>
   <script type="module">
-    import { startGame } from './src/game.js'; 
+    import { startGame } from '/src/game.js'; 
     startGame();
+
+    // Back to Home button functionality
+    document.getElementById('back-home-btn').addEventListener('click', () => {
+      window.location.href = '/index.html';
+    });
   </script>
 </body>
 </html>
