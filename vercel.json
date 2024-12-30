@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "public": "public",
     "builds": [
       { "src": "public/**/*.html", "use": "@vercel/static" },
       { "src": "public/styles/**/*.css", "use": "@vercel/static" },
