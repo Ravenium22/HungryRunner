@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>HungryRunner Character Select</title>
+
+  <!-- Google Font "Outfit" -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;900&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="./styles/main.css" />
+</head>
+<body>
+  <!-- WRAPPER for full-page flex layout -->
+  <div class="page-wrapper">
+
+    <!-- HEADER (Top) -->
+    <header class="header-bar">
+      <img
+        src="./sprites/ramenfinancelogo.png"
+        alt="RamenFinance Logo"
+        class="brand-logo"
+      />
+      <h1 class="header-title">HungryRunner</h1>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <!-- HOW TO PLAY SECTION -->
+      <section class="how-to-play-section">
+        <h2 class="section-title">How to Play</h2>
+        <p class="how-to-play-text">
+          Use <strong>Space</strong> or <strong>Arrow Up</strong> to jump over obstacles.  
+          Collect power-ups to become briefly invincible. 
+          Avoid colliding with obstacles or you'll lose health. 
+          Once your HP is gone, it's Game Over!
+        </p>
+      </section>
+
+      <!-- CHARACTER SELECT SECTION -->
+      <section class="character-select-section">
+        <h2 class="section-title">Select Your Character</h2>
+        
+        <div class="character-select-grid">
+          <div class="character-option" data-character="runner.png">
+            <img
+              src="./sprites/runner.png"
+              alt="Runner Classic"
+              class="character-img"
+            />
+            <p>Runner Classic</p>
+          </div>
+
+          <div class="character-option" data-character="runner_bw69.png">
+            <img
+              src="./sprites/runner_bw69.png"
+              alt="Runner BW69"
+              class="character-img"
+            />
+            <p>Runner BW69</p>
+          </div>
+
+          <div class="character-option" data-character="runner_noral.png">
+            <img
+              src="./sprites/runner_noral.png"
+              alt="Runner Noral"
+              class="character-img"
+            />
+            <p>Runner Noral</p>
+          </div>
+
+          <div class="character-option" data-character="runner_pepar.png">
+            <img
+              src="./sprites/runner_pepar.png"
+              alt="Runner Pepar"
+              class="character-img"
+            />
+            <p>Runner Pepar</p>
+          </div>
+
+          <div class="character-option" data-character="runner_polar.png">
+            <img
+              src="./sprites/runner_polar.png"
+              alt="Runner Polar"
+              class="character-img"
+            />
+            <p>Runner Polar</p>
+          </div>
+
+          <div class="character-option" data-character="runner_ravenium.png">
+            <img
+              src="./sprites/runner_ravenium.png"
+              alt="Runner Ravenium"
+              class="character-img"
+            />
+            <p>Runner Ravenium</p>
+          </div>
+        </div>
+
+        <button id="start-game-btn" class="btn-accent">Start Game</button>
+      </section>
+    </main>
+
+    <!-- FOOTER (Bottom) -->
+    <footer class="footer-bar">
+      <p class="footer-text">
+        &copy; <span id="current-year"></span> HungryRunner. All rights reserved.
+      </p>
+      <p class="footer-text">
+        Made by <strong>Ravenium</strong> | 
+        X: <a href="https://twitter.com/RaveniumNFT" target="_blank">@RaveniumNFT</a> |
+        Discord: Ravenium22
+      </p>
+    </footer>
+
+  </div>
+
+  <!-- JS: Character selection + highlight logic -->
+  <script type="module">
+    import { setupCharacterSelection } from './src/characterSelect.js';
+    setupCharacterSelection();
+
+    // Set the current year in the footer
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // Highlight the selected character
+    const characterOptions = document.querySelectorAll('.character-option');
+    let selectedOption = null;
+
+    characterOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        if (selectedOption) {
+          selectedOption.classList.remove('selected-option');
+        }
+        option.classList.add('selected-option');
+        selectedOption = option;
+      });
+    });
+  </script>
+</body>
+</html>

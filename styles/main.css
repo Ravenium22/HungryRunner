@@ -1,0 +1,157 @@
+/* main.css */
+
+/* Root brand colors */
+:root {
+  --primary-color: #D83228;
+  --accent-color: #FCA605;
+  --secondary-color: #EADED1;
+  --dark-color: #171717;
+}
+
+/* Full-page layout */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Outfit', sans-serif;
+  background-color: var(--dark-color); 
+  color: #fff;
+}
+
+.page-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+.header-bar {
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--dark-color);
+  border-bottom: 2px solid #222;
+}
+
+.brand-logo {
+  width: 48px;
+  margin-right: 1rem;
+}
+
+.header-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin: 0;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  flex: 1;
+  max-width: 1000px;
+  margin: 2rem auto;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+/* How to Play Section */
+.how-to-play-section {
+  margin-bottom: 2rem;
+}
+
+.how-to-play-text {
+  max-width: 600px;
+  margin: 0.5rem auto;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #ddd;
+}
+
+/* Character Selection */
+.character-select-section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--primary-color);
+}
+
+.character-select-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+  margin: 2rem 0;
+}
+
+.character-option {
+  cursor: pointer;
+  border: 2px solid transparent;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: var(--secondary-color);
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    transform 0.2s ease;
+  color: var(--dark-color);
+}
+
+.character-option:hover {
+  transform: translateY(-2px);
+  border-color: #aaa;
+}
+
+.character-img {
+  width: 80px;
+  height: auto;
+  display: block;
+  margin: 0 auto 0.5rem auto;
+}
+
+.selected-option {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px rgba(216, 50, 40, 0.5);
+}
+
+/* Button */
+.btn-accent {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-accent:hover {
+  background-color: var(--accent-color);
+}
+
+/* FOOTER */
+.footer-bar {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--dark-color);
+  border-top: 2px solid #222;
+}
+
+.footer-text {
+  margin: 0.3rem 0;
+  font-size: 0.9rem;
+  color: #fff;
+  line-height: 1.4;
+}
+
+.footer-text a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  text-decoration: underline;
+}

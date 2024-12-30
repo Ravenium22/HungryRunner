@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RamenFinance Runner</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #EADED1;
+    }
+    #phaser-game {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="phaser-game"></div>
+  <script type="module">
+    import { startGame } from './src/game.js'; 
+    startGame();
+  </script>
+</body>
+</html>
