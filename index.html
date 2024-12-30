@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,7 +14,7 @@
   />
 
   <!-- Main CSS -->
-  <link rel="stylesheet" href="./styles/main.css" />
+  <link rel="stylesheet" href="/styles/main.css" />
 </head>
 <body>
   <!-- WRAPPER for full-page flex layout -->
@@ -22,7 +23,7 @@
     <!-- HEADER (Top) -->
     <header class="header-bar">
       <img
-        src="./sprites/ramenfinancelogo.png"
+        src="/sprites/ramenfinancelogo.png"
         alt="RamenFinance Logo"
         class="brand-logo"
       />
@@ -35,9 +36,9 @@
       <section class="how-to-play-section">
         <h2 class="section-title">How to Play</h2>
         <p class="how-to-play-text">
-          Use <strong>Space</strong> or <strong>Arrow Up</strong> to jump over obstacles.  
-          Collect power-ups to become briefly invincible. 
-          Avoid colliding with obstacles or you'll lose health. 
+          Use <strong>Space</strong> or <strong>Arrow Up</strong> to jump over obstacles.<br>
+          Collect power-ups to become briefly invincible.<br>
+          Avoid colliding with obstacles or you'll lose health.<br>
           Once your HP is gone, it's Game Over!
         </p>
       </section>
@@ -49,7 +50,7 @@
         <div class="character-select-grid">
           <div class="character-option" data-character="runner.png">
             <img
-              src="./sprites/runner.png"
+              src="/sprites/runner.png"
               alt="Runner Classic"
               class="character-img"
             />
@@ -58,7 +59,7 @@
 
           <div class="character-option" data-character="runner_bw69.png">
             <img
-              src="./sprites/runner_bw69.png"
+              src="/sprites/runner_bw69.png"
               alt="Runner BW69"
               class="character-img"
             />
@@ -67,7 +68,7 @@
 
           <div class="character-option" data-character="runner_noral.png">
             <img
-              src="./sprites/runner_noral.png"
+              src="/sprites/runner_noral.png"
               alt="Runner Noral"
               class="character-img"
             />
@@ -76,7 +77,7 @@
 
           <div class="character-option" data-character="runner_pepar.png">
             <img
-              src="./sprites/runner_pepar.png"
+              src="/sprites/runner_pepar.png"
               alt="Runner Pepar"
               class="character-img"
             />
@@ -85,7 +86,7 @@
 
           <div class="character-option" data-character="runner_polar.png">
             <img
-              src="./sprites/runner_polar.png"
+              src="/sprites/runner_polar.png"
               alt="Runner Polar"
               class="character-img"
             />
@@ -94,7 +95,7 @@
 
           <div class="character-option" data-character="runner_ravenium.png">
             <img
-              src="./sprites/runner_ravenium.png"
+              src="/sprites/runner_ravenium.png"
               alt="Runner Ravenium"
               class="character-img"
             />
@@ -122,7 +123,7 @@
 
   <!-- JS: Character selection + highlight logic -->
   <script type="module">
-    import { setupCharacterSelection } from './src/characterSelect.js';
+    import { setupCharacterSelection } from '/src/characterSelect.js';
     setupCharacterSelection();
 
     // Set the current year in the footer
@@ -140,6 +141,11 @@
         option.classList.add('selected-option');
         selectedOption = option;
       });
+    });
+
+    // Redirect to game.html on Start Game button click
+    document.getElementById('start-game-btn').addEventListener('click', () => {
+      window.location.href = '/game.html';
     });
   </script>
 </body>
