@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>HungryRunner Character Select</title>
+  <title>HungryRunner</title>
 
   <!-- Google Font "Outfit" -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -42,66 +42,8 @@
         </p>
       </section>
 
-      <!-- CHARACTER SELECT SECTION -->
-      <section class="character-select-section">
-        <h2 class="section-title">Select Your Character</h2>
-        
-        <div class="character-select-grid">
-          <div class="character-option" data-character="runner.png">
-            <img
-              src="/assets/sprites/runner.png"
-              alt="Runner Classic"
-              class="character-img"
-            />
-            <p>Runner Classic</p>
-          </div>
-
-          <div class="character-option" data-character="runner_bw69.png">
-            <img
-              src="/assets/sprites/runner_bw69.png"
-              alt="Runner BW69"
-              class="character-img"
-            />
-            <p>Runner BW69</p>
-          </div>
-
-          <div class="character-option" data-character="runner_noral.png">
-            <img
-              src="/assets/sprites/runner_noral.png"
-              alt="Runner Noral"
-              class="character-img"
-            />
-            <p>Runner Noral</p>
-          </div>
-
-          <div class="character-option" data-character="runner_pepar.png">
-            <img
-              src="/assets/sprites/runner_pepar.png"
-              alt="Runner Pepar"
-              class="character-img"
-            />
-            <p>Runner Pepar</p>
-          </div>
-
-          <div class="character-option" data-character="runner_polar.png">
-            <img
-              src="/assets/sprites/runner_polar.png"
-              alt="Runner Polar"
-              class="character-img"
-            />
-            <p>Runner Polar</p>
-          </div>
-
-          <div class="character-option" data-character="runner_ravenium.png">
-            <img
-              src="/assets/sprites/runner_ravenium.png"
-              alt="Runner Ravenium"
-              class="character-img"
-            />
-            <p>Runner Ravenium</p>
-          </div>
-        </div>
-
+      <!-- START GAME SECTION -->
+      <section class="start-game-section">
         <button id="start-game-btn" class="btn-accent">Start Game</button>
       </section>
     </main>
@@ -120,27 +62,10 @@
 
   </div>
 
-  <!-- JS: Character selection + highlight logic -->
+  <!-- JS: Start Game Logic -->
   <script type="module">
-    import { setupCharacterSelection } from '/src/characterSelect.js';
-    setupCharacterSelection();
-
     // Set the current year in the footer
     document.getElementById('current-year').textContent = new Date().getFullYear();
-
-    // Highlight the selected character
-    const characterOptions = document.querySelectorAll('.character-option');
-    let selectedOption = null;
-
-    characterOptions.forEach(option => {
-      option.addEventListener('click', () => {
-        if (selectedOption) {
-          selectedOption.classList.remove('selected-option');
-        }
-        option.classList.add('selected-option');
-        selectedOption = option;
-      });
-    });
 
     // Redirect to game.html on Start Game button click
     document.getElementById('start-game-btn').addEventListener('click', () => {
